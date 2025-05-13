@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { Laptop2 } from "lucide-react"
+import Link from "next/link";
+import { Laptop2 } from "lucide-react";
 
 const navigation = {
   services: [
@@ -11,24 +11,19 @@ const navigation = {
     { name: "サイトリニューアル", href: "#services" },
     { name: "SEOサービス", href: "#services" },
   ],
-  company: [
-    { name: "会社概要", href: "#" },
-    { name: "チーム", href: "#team" },
-    { name: "採用情報", href: "#" },
-    { name: "ブログ", href: "#" },
-  ],
+  // company: [
+  //   { name: "会社概要", href: "#" },
+  //   { name: "チーム", href: "#team" },
+  //   { name: "採用情報", href: "#" },
+  //   { name: "ブログ", href: "#" },
+  // ],
   legal: [
     { name: "プライバシーポリシー", href: "#" },
     { name: "利用規約", href: "#" },
     { name: "Cookie ポリシー", href: "#" },
   ],
-  social: [
-    { name: "Facebook", href: "#" },
-    { name: "Instagram", href: "#" },
-    { name: "Twitter", href: "#" },
-    { name: "LinkedIn", href: "#" },
-  ],
-}
+  social: [{ name: "X(Twitter)", href: "https://x.com/seino914" }],
+};
 
 export default function Footer() {
   return (
@@ -47,58 +42,70 @@ export default function Footer() {
               © {new Date().getFullYear()} WebPro. All rights reserved.
             </p>
           </div>
-          
+
           <div>
             <h3 className="font-semibold text-lg mb-4">サービス</h3>
             <ul className="space-y-2">
               {navigation.services.map((item) => (
                 <li key={item.name}>
-                  <Link href={item.href} className="text-gray-400 hover:text-white transition-colors">
+                  <Link
+                    href={item.href}
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
                     {item.name}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
-          
-          <div>
+
+          {/* <div>
             <h3 className="font-semibold text-lg mb-4">会社情報</h3>
             <ul className="space-y-2">
               {navigation.company.map((item) => (
                 <li key={item.name}>
-                  <Link href={item.href} className="text-gray-400 hover:text-white transition-colors">
+                  <Link
+                    href={item.href}
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
                     {item.name}
                   </Link>
                 </li>
               ))}
             </ul>
-          </div>
-          
-          <div>
+          </div> */}
+
+          {/* <div>
             <h3 className="font-semibold text-lg mb-4">法的情報</h3>
             <ul className="space-y-2">
               {navigation.legal.map((item) => (
                 <li key={item.name}>
-                  <Link href={item.href} className="text-gray-400 hover:text-white transition-colors">
+                  <Link
+                    href={item.href}
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
                     {item.name}
                   </Link>
                 </li>
               ))}
             </ul>
-            
+
             <h3 className="font-semibold text-lg mt-8 mb-4">フォローする</h3>
             <ul className="space-y-2">
               {navigation.social.map((item) => (
                 <li key={item.name}>
-                  <Link href={item.href} className="text-gray-400 hover:text-white transition-colors">
+                  <Link
+                    href={item.href}
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
                     {item.name}
                   </Link>
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>
-  )
+  );
 }
