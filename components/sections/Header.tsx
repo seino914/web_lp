@@ -1,46 +1,50 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import { Menu, X, Laptop2 } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { Menu, X, Laptop2 } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 const navigation = [
   { name: "メリット", href: "#benefits" },
   { name: "サービス", href: "#services" },
-  { name: "チーム", href: "#team" },
-  { name: "お客様の声", href: "#testimonials" },
+  // { name: "チーム", href: "#team" },
+  // { name: "お客様の声", href: "#testimonials" },
   { name: "料金", href: "#pricing" },
-]
+];
 
 export default function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className={cn(
-      "fixed w-full z-50 transition-all duration-300",
-      scrolled 
-        ? "bg-background/95 backdrop-blur-sm shadow-sm" 
-        : "bg-transparent"
-    )}>
+    <header
+      className={cn(
+        "fixed w-full z-50 transition-all duration-300",
+        scrolled
+          ? "bg-background/95 backdrop-blur-sm shadow-sm"
+          : "bg-transparent"
+      )}
+    >
       <nav className="container mx-auto flex items-center justify-between p-4">
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-2">
             <Laptop2 className="h-6 w-6" />
-            <span className="font-bold text-2xl bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">WebPro</span>
+            <span className="font-bold text-2xl bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
+              WebPro
+            </span>
           </Link>
         </div>
-        
+
         <div className="hidden lg:flex lg:gap-x-8">
           {navigation.map((item) => (
             <Link
@@ -52,13 +56,13 @@ export default function Header() {
             </Link>
           ))}
         </div>
-        
+
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <Button asChild size="sm">
             <Link href="#contact">お問い合わせ</Link>
           </Button>
         </div>
-        
+
         <div className="flex lg:hidden">
           <button
             type="button"
@@ -69,14 +73,16 @@ export default function Header() {
             <Menu className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
-        
+
         {/* モバイルメニュー */}
         {mobileMenuOpen && (
           <div className="fixed inset-0 z-50 bg-background/95 backdrop-blur-sm">
             <div className="fixed inset-y-0 right-0 z-50 w-full bg-background px-6 py-6 sm:max-w-sm">
               <div className="flex items-center justify-between">
                 <Link href="/" className="-m-1.5 p-1.5">
-                  <span className="font-bold text-2xl bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">WebPro</span>
+                  <span className="font-bold text-2xl bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
+                    WebPro
+                  </span>
                 </Link>
                 <button
                   type="button"
@@ -102,8 +108,8 @@ export default function Header() {
                     ))}
                   </div>
                   <div className="py-6">
-                    <Button 
-                      className="w-full" 
+                    <Button
+                      className="w-full"
                       onClick={() => setMobileMenuOpen(false)}
                       asChild
                     >
@@ -117,5 +123,5 @@ export default function Header() {
         )}
       </nav>
     </header>
-  )
+  );
 }
