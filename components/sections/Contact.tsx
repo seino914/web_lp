@@ -54,7 +54,7 @@ export default function Contact() {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <div>
+            {/* <div>
               <h3 className="text-xl font-semibold mb-4">お問い合わせ先</h3>
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
@@ -67,7 +67,7 @@ export default function Contact() {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             <div>
               <h3 className="text-xl font-semibold mb-4">ご相談後の流れ</h3>
@@ -103,7 +103,7 @@ export default function Contact() {
                   <div>
                     <h4 className="font-medium">制作開始</h4>
                     <p className="text-muted-foreground text-sm">
-                      ご承認いただいた後、熟練エンジニアチームが制作を開始します。
+                      ご承認いただいた後、エンジニアチームが制作を開始します。
                     </p>
                   </div>
                 </li>
