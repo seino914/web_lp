@@ -31,8 +31,8 @@ export default function Header() {
       className={cn(
         "fixed w-full z-50 transition-all duration-300",
         scrolled
-          ? "bg-background/95 backdrop-blur-sm shadow-sm"
-          : "bg-transparent"
+          ? "bg-background/95 backdrop-blur-sm shadow-sm text-foreground"
+          : "bg-transparent text-white"
       )}
     >
       <nav className="container mx-auto flex items-center justify-between p-4">
