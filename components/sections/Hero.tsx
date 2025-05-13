@@ -1,17 +1,17 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
-import Image from "next/image"
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function Hero() {
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* 背景画像とオーバーレイ */}
       <div className="absolute inset-0 z-0">
-        <Image 
-          src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+        <Image
+          src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
           alt="モダンなオフィス空間"
           fill
           priority
@@ -19,7 +19,7 @@ export default function Hero() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40" />
       </div>
-      
+
       <div className="container px-4 mx-auto relative z-10 pt-20 md:pt-0">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -28,39 +28,52 @@ export default function Hero() {
             transition={{ duration: 0.6 }}
             className="text-white"
           >
-            <motion.h1 
+            <motion.h1
               className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              あなたのビジネスに<br />プロフェッショナルな<br />Webサイトを
+              あなたのビジネスに
+              <br />
+              プロフェッショナルな
+              <br />
+              Webサイトを
             </motion.h1>
-            
-            <motion.p 
+
+            <motion.p
               className="text-lg md:text-xl leading-relaxed mb-8 text-gray-200 max-w-xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              平凡なWebサイトで満足していませんか？私たちの熟練エンジニアが、あなたのビジネスに実績を生み出すデジタルソリューションを提供します。
+              平凡なWebサイトで満足していませんか？熟練エンジニアが、あなたのビジネスに実績を生み出すデジタルソリューションを提供します。
             </motion.p>
-            
-            <motion.div 
+
+            <motion.div
               className="flex flex-col sm:flex-row gap-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
             >
-              <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
+              <Button
+                asChild
+                size="lg"
+                className="bg-primary hover:bg-primary/90"
+              >
                 <Link href="#contact">無料相談を予約する</Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="bg-white/10 backdrop-blur-sm text-white border-white/30 hover:bg-white/20">
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="bg-white/10 backdrop-blur-sm text-white border-white/30 hover:bg-white/20"
+              >
                 <Link href="#benefits">詳しく見る</Link>
               </Button>
             </motion.div>
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -79,9 +92,9 @@ export default function Hero() {
           </motion.div>
         </div>
       </div>
-      
+
       {/* スクロールインジケーター */}
-      <motion.div 
+      <motion.div
         className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -96,5 +109,5 @@ export default function Hero() {
         </motion.div>
       </motion.div>
     </div>
-  )
+  );
 }
